@@ -1,0 +1,6 @@
+app:
+  info: client1-hello-dev-6
+  #对称加密的密文，明文：qwe123
+  #password: '{cipher}031448d3a7bc4abc710a377c577110c8dcce67944ab1093cd2bf496366d8d97a'
+  #非对称加密的密文，明文：qwe123
+  password: '{cipher}AQA9g12n2erx0zL1jp7B6p9qknzYIXaG/KtszdCPRABct2UW7xzL8tGjLfow2xxkJKvysLMtd2r02dILQbHRBS/LSu+xJbSYNLJwjdkKWVBf6RTzPYQ8FaqHMBComCATafUryNZee5s1DvDJdAyYAvkOfkt+kb+Apw050cENs6QoCSDa0pCl2JJ+YNrGFnZFXytP27OUGzKTll9lJanUiq7n8RK/MGH+UbyzSzXUh//qNBi6esA3JG5hMsvmtq++bj3EnBI99qCDWtoNE4YQ3P/jM4y75b9O+RnqgMDakR6SH85347FQ7QeyFTQZRKWWPmYLcxnahnrXrwNA+ZufJ89QjVfxj6anjJcpvsQbTx2hqESGEmlnfuN6lA0/Xtx2Vfs='
