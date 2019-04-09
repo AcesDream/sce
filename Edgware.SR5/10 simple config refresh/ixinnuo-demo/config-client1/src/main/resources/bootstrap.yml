@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: config-client1                     #指定了配置文件的应用名
+  cloud:
+    config:
+      uri: http://localhost:9801/        #Config server的uri
+      label: client1                      #指定分支
+      profile: dev
+      name: client1                      #指定的应用的名称
+server:
+  port: 7001
+management:
+  security:
+    enabled: false     #SpringBoot 1.5.X 以上默认开通了安全认证，如果不关闭会要求权限
+
+logging:
+  level: debug

@@ -1,0 +1,73 @@
+server:
+  port: 9500
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: eureka-zuul
+  rabbitmq:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
+
+zuul:
+  SendErrorFilter:
+    post:
+      disable: true
+  max:
+    host:
+      connections: 500
+  host:
+    #默认1000
+    socket-timeout-millis: 300
+    #默认2000
+    connect-timeout-millis: 1
+  routes:
+#  指定微服务的Id，直接指定访问url
+    eureka-clienta: /eca/**
+#   clienta是自定义名称，下面指定service-id和path来配置路由，使用service-id的方式，超时时间ribbon生效
+    clienta:
+      service-id: eureka-clienta
+      path: /oeca/**
+#   clientb是自定义名称，下面指定url和path来配置路由，使用url的方式，超时时间是zuul.host生效
+    clientb:
+      path: /oecb/**
+      url: http://localhost:9001/
+#      忽略某一个微服务
+#  ignored-services: eureka-clientc
+#  忽略所有的微服务，打开了这个，则路由上面指定的配置
+#  ignored-services: '*'
+
+
+ribbon:
+  #对所有操作请求都进行重试,默认false
+  OkToRetryOnAllOperations: false
+  #负载均衡超时时间，默认值5000
+  ReadTimeout: 2000
+  #ribbon请求连接的超时时间，默认值2000
+  ConnectTimeout: 1000
+  #对当前实例的重试次数，默认0
+  MaxAutoRetries: 0
+  #对切换实例的重试次数，默认1
+  MaxAutoRetriesNextServer: 1
+
+
+# 所以hystrix的超时时间要大于 (1 + MaxAutoRetries + MaxAutoRetriesNextServer) * (ReadTimeout+ConnectTimeout) 比较好，具体看需求进行配置。
+hystrix:
+  command:
+    #default全局有效，service id指定应用有效
+    default:
+      execution:
+        timeout:
+          #如果enabled设置为false，则请求超时交给ribbon控制,为true,则超时作为熔断根据
+          enabled: true
+        isolation:
+          thread:
+            #断路器超时时间，默认1000ms
+            timeoutInMilliseconds: 2000
+

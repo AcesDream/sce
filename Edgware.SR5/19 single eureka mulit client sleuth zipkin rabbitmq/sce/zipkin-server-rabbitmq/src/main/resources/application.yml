@@ -1,0 +1,27 @@
+server:
+  port: 9700
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+# 定义存储方式为MySQL
+zipkin:
+  storage:
+    type: mysql
+
+spring:
+  application:
+    name: zipkin-server-rabbitmq
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  datasource:
+    schema:  classpath:/zipkin.sql
+    url: jdbc:mysql://172.16.16.36:3306/zipkin
+    username: root
+    password: 123456
+    driverClassName: com.mysql.jdbc.Driver

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/demo.iml" filepath="$PROJECT_DIR$/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka/eureka.iml" filepath="$PROJECT_DIR$/eureka/eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-clienta/eureka-clienta.iml" filepath="$PROJECT_DIR$/eureka-clienta/eureka-clienta.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-clientb/eureka-clientb.iml" filepath="$PROJECT_DIR$/eureka-clientb/eureka-clientb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-clientc/eureka-clientc.iml" filepath="$PROJECT_DIR$/eureka-clientc/eureka-clientc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zipkin-server/zipkin-server.iml" filepath="$PROJECT_DIR$/zipkin-server/zipkin-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zipkin-server-rabbitmq/zipkin-server-rabbitmq.iml" filepath="$PROJECT_DIR$/zipkin-server-rabbitmq/zipkin-server-rabbitmq.iml" />
+    </modules>
+  </component>
+</project>

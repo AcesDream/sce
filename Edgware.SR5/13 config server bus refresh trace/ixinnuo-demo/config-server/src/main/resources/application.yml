@@ -1,0 +1,26 @@
+server:
+  port: 9801
+
+management:
+  security:
+    enabled: false     #SpringBoot 1.5.X 以上默认开通了安全认证，如果不关闭会要求权限
+
+#配置管理服务器
+spring:
+  application: 
+    name: config-server
+  profiles:
+      active: native # 使用本地配置文件
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: /data/api/config
+    bus:
+      trace:
+        enabled: true # 跟踪总线事件
+  rabbitmq:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest

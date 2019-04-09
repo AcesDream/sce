@@ -1,0 +1,17 @@
+#设置再application.yml会提示No key was installed for encryption service
+
+#1. 配置JCE
+#2. bootstrap.yml中设置key，不能在application.yml中设置
+# 可通过以下端点（/encrypt/status）来访问查看
+
+# 对称加密的key
+#encrypt:
+#  key: Thisismysecretkey
+
+# 非对称加密
+encrypt:
+  key-store:
+    location: classpath:/config-server.keystore
+    password: 111111
+    alias: config-server
+    secret: 222222

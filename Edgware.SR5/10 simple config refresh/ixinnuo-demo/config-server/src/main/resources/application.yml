@@ -1,0 +1,14 @@
+server:
+  port: 9801
+
+#配置管理服务器
+spring:
+  application: 
+    name: config-server
+  profiles:
+      active: native # 使用本地配置文件
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: /data/api/config # 配置文件的目录
